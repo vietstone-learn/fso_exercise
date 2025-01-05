@@ -3,23 +3,24 @@ import { useState } from 'react'
 const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
 
 const StatisticLine = ({ text, value }) => (
-  <div>
-    {text} {value}
-  </div>
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
 )
 
-const Statistics = ({ good, neutral, bad, all }) => {
-  return (
-    <>
+const Statistics = ({ good, neutral, bad, all }) => (
+  <table>
+    <tbody>
       <StatisticLine text='good' value={good} />
       <StatisticLine text='neutral' value={neutral} />
       <StatisticLine text='bad' value={bad} />
       <StatisticLine text='all' value={all} />
       <StatisticLine text='average' value={(good - bad) / all} />
       <StatisticLine text='positive' value={(good / all) * 100 + ' %'} />
-    </>
-  )
-}
+    </tbody>
+  </table>
+)
 
 const App = () => {
   const [good, setGood] = useState(0)
