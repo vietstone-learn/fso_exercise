@@ -1,0 +1,6 @@
+{
+  "editor.linkedEditing": true,
+
+  "javascript.preferences.renameMatchingJsxTags": true,
+  "typescript.preferences.renameMatchingJsxTags": true
+}
